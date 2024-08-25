@@ -5,7 +5,7 @@ This tool randomly matches fantasy football teams with drivers in an event to th
 ## Usage
 
 1. Create a folder named `input/` at the root directory.
-2. Then create a file named `players.txt` and another file named `drivers.txt`.
+2. Then create a file named `owners.txt` for each team owner in your league and another file named `options.txt`, which will contain the possible options to match an owner with.
 3. Run the program with `cargo run`.
 
 **Note:** The files must contain the same number of names.

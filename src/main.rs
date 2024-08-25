@@ -15,21 +15,28 @@ where
 }
 
 fn main() -> io::Result<()> {
-    let players = read_lines("input/players.txt")?;
-    let mut drivers = read_lines("input/drivers.txt")?;
+    let owners = read_lines("input/owners.txt")?;
+    let mut options = read_lines("input/options.txt")?;
 
-    if players.len() != drivers.len() {
-        eprintln!("Both files must contain the same number of names.");
-        return Ok(());
+    if owners.len() != options.len() {
+        eprintln!(
+            "Error: The number of owners ({}) does not match the number of options ({}).",
+            owners.len(),
+            options.len()
+        );
+        return Err(io::Error::new(
+            io::ErrorKind::InvalidInput,
+            "Mismatched file lengths",
+        ));
     }
 
-    // Shuffle the drivers
+    // Shuffle the options
     let mut rng = thread_rng();
-    drivers.shuffle(&mut rng);
+    options.shuffle(&mut rng);
 
-    // Match players with drivers and print in the desired format
-    for (player, driver) in players.iter().zip(drivers.iter()) {
-        println!("{driver} - {player}");
+    // Match players with options and print in the desired format
+    for (owner, driver) in owners.iter().zip(options.iter()) {
+        println!("{owner}: {driver}");
     }
 
     Ok(())
