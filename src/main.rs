@@ -18,8 +18,8 @@ fn main() -> io::Result<()> {
     let players = read_lines("input/players.txt")?;
     let mut drivers = read_lines("input/drivers.txt")?;
 
-    if players.len() != 10 || drivers.len() != 10 {
-        eprintln!("Both files must contain exactly 10 names.");
+    if players.len() != drivers.len() {
+        eprintln!("Both files must contain the same number of names.");
         return Ok(());
     }
 
