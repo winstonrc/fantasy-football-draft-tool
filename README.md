@@ -1,5 +1,7 @@
 # fantasy-football-draft-tool
 
+This tool randomly matches fantasy football teams with drivers in an event to then allow the relative finishing position of the drivers to determine the fantasy football draft order.
+
 ## Usage
 
 1. Create a folder named `input/` at the root directory.
